@@ -9,7 +9,7 @@ const Home = () => {
   const [herosection, setHeroSection] = useState(null);
   const [products, setProducts] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [prodperpage, setProdPerPage] = useState(10);
+  const [prodperpage, setProdPerPage] = useState(20);
   const [pageNo, setPageNo] = useState(1);
   useEffect(() => {
     try {

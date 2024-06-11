@@ -7,8 +7,23 @@ const Pagination = ({ pageNo, setPageNo, noOfPages }) => {
   useEffect(() => {
     setActivePage(pageNo);
   });
+  const getPagestoDisplay = () => {
+    const totalPages = Array.from({ length: noOfPages }, (_, i) => i + 1);
+    if (noOfPages <= 5) {
+      return totalPages;
+    }
 
-  let pages = Array.from({ length: noOfPages }, (_, i) => i + 1);
+    const startPage = Math.max(1, Math.min(activepage - 2, noOfPages - 4));
+    const endPage = Math.min(noOfPages, startPage + 4);
+
+    return totalPages.slice(startPage - 1, endPage);
+  };
+  // let pages = Array.from({ length: noOfPages }, (_, i) => i + 1);
+  // let showpage
+  // if(activepage>=3){
+  //   showpage = pages.slice()
+  // }
+
   function handlePage(pn) {
     setPageNo(pn);
     setActivePage(pn);
@@ -23,7 +38,7 @@ const Pagination = ({ pageNo, setPageNo, noOfPages }) => {
       setActivePage(pageNo + 1);
     }
   }
-
+  const pagesToDisplay = getPagestoDisplay();
   return noOfPages <= 1 ? (
     <></>
   ) : (
@@ -32,7 +47,7 @@ const Pagination = ({ pageNo, setPageNo, noOfPages }) => {
         <li onClick={() => handlePageButton("previous")}>
           <Icons.ArrowLeftCircle className="actionbutton" size={26} />
         </li>
-        {pages.map((m, i) => (
+        {pagesToDisplay.map((m, i) => (
           <li
             onClick={() => handlePage(m)}
             className="pages"
