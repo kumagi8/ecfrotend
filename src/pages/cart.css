@@ -62,3 +62,10 @@
 .clear-cart:hover {
   background-color: #2980b9;
 }
+
+.quantity-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
