@@ -18,11 +18,6 @@ const Pagination = ({ pageNo, setPageNo, noOfPages }) => {
 
     return totalPages.slice(startPage - 1, endPage);
   };
-  // let pages = Array.from({ length: noOfPages }, (_, i) => i + 1);
-  // let showpage
-  // if(activepage>=3){
-  //   showpage = pages.slice()
-  // }
 
   function handlePage(pn) {
     setPageNo(pn);
