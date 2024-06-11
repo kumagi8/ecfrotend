@@ -12,10 +12,7 @@ const ProductSingles = ({ product }) => {
         <img src={images[0]} alt={title} className="product-image" />
         <h3 className="product-name">{title}</h3>
         <p className="product-price">
-          <span className="span-align">
-            <Icons.CurrencyRupee />
-            {price}
-          </span>
+          <span className="span-align">${price}</span>
         </p>
         {/* <p className="product-rating">
         <span className="span-align">
