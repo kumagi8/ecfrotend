@@ -68,10 +68,7 @@ const PDP = () => {
           <div className="product-info">
             <h1>{name}</h1>
             <p>{description}</p>
-            <h2>
-              <Icons.CurrencyRupee />
-              {price?.toFixed(2)}
-            </h2>
+            <h2>${price?.toFixed(2)}</h2>
             {!addtocart ? (
               <button className="atc atcbtn" onClick={handleAddToCart}>
                 Add to cart
