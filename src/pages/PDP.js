@@ -72,12 +72,21 @@ const PDP = () => {
               <Icons.CurrencyRupee />
               {price?.toFixed(2)}
             </h2>
-            <button
+            {!addtocart ? (
+              <button className="atc atcbtn" onClick={handleAddToCart}>
+                Add to cart
+              </button>
+            ) : (
+              <button className="adtc atcbtn">
+                <Link to="/cart">Go to cart</Link>
+              </button>
+            )}
+            {/* <button
               onClick={handleAddToCart}
               className={addtocart ? "adtc atcbtn" : "atc atcbtn"}
             >
               {addtocart ? <Link to="/cart">Go to cart</Link> : "Add to cart"}
-            </button>
+            </button> */}
           </div>
         </div>
       )}
