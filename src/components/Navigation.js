@@ -22,6 +22,9 @@ const Navigation = () => {
         <Link className="logospace" to="/">
           <Logo fontsizee={fontsizee} />
         </Link>
+        <Link className="home" to="/">
+          <Icons.House color="black" size={24} />
+        </Link>
         <div id="search-bar">
           <input
             value={searchQuery}
