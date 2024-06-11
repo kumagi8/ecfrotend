@@ -34,12 +34,12 @@ const Navigation = () => {
           id="nav-links"
           className={`nav-links ${!toggleMenu ? "hidden" : ""}`}
         >
-          <li>
+          {/* <li>
             <Link to="/login">
               <Icons.PersonCircle size={20} />
               Login
             </Link>
-          </li>
+          </li> */}
           <li id="cart">
             <Link to="/cart">
               <Icons.Cart size={20} />
