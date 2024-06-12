@@ -1,5 +1,5 @@
 .cart {
-  width: 400px;
+  min-width: 400px;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -11,9 +11,8 @@
 }
 .myorders {
   text-decoration: none;
-  border-bottom: #2980b9 1px solid;
-
-  padding: 0.3rem 0.5rem;
+  margin-left: 10px;
+  padding: 0.3rem 0.2rem;
 }
 
 .cart p {
