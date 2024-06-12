@@ -1,25 +1,20 @@
-import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItem, clearCart } from ".././Redux/cartSlice";
 import * as Icons from "react-bootstrap-icons";
 import { addItem } from ".././Redux/cartSlice";
+import { addOrder } from "../Redux/orderSlice";
 import "./cart.css";
 import { Link } from "react-router-dom";
 const Cart = () => {
-  const cart = useSelector((store) => store.cart.items);
-
+  const { items } = useSelector((state) => state.cart);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const dispatch = useDispatch();
-  // const [cartItems, setCartItems] = useState(null);
   const removeItemHandler = (id) => {
     dispatch(removeItem(id));
-    // const removeditem = cart.filter((c) => c.id !== id);
-    // setCartItems(removeditem);
   };
 
   const clearCartHandler = () => {
     dispatch(clearCart());
-    // setCartItems(null);
   };
   function handleAddToCart(product) {
     dispatch(
@@ -32,9 +27,17 @@ const Cart = () => {
       })
     );
   }
-  useEffect(() => {
-    // setCartItems(cart);
-  }, []);
+  function handleOrder() {
+    dispatch(
+      addOrder({
+        id: Date.now(),
+        date: Date.now(),
+        grossAmount: totalAmount,
+        items: items,
+      })
+    );
+    dispatch(clearCart());
+  }
 
   return (
     <div className="cart">
@@ -44,14 +47,16 @@ const Cart = () => {
           My Orders
         </Link>
       </div>
-      {cart?.length === 0 ? (
+      {items?.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
         <ul>
-          {cart?.map((item) => (
+          {items?.map((item) => (
             <li key={item.id} className="cart-item">
               <div className="prod-detail">
-                <strong>{item.title}</strong>
+                <Link className="productlink" to={`/product?id=${item.id}`}>
+                  <strong>{item.title}</strong>
+                </Link>
                 <span>Quantity: {item.quantity}</span>
                 <span>Total Price: ${item.totalPrice.toFixed(2)}</span>
               </div>
@@ -76,12 +81,17 @@ const Cart = () => {
           ))}
         </ul>
       )}
-      {cart?.length > 0 && (
+      {items?.length > 0 && (
         <>
           <h3>Total Amount: ${totalAmount.toFixed(2)}</h3>
-          <button onClick={clearCartHandler} className="clear-cart">
-            Clear Cart
-          </button>
+          <div className="car-order-btn">
+            <button onClick={clearCartHandler} className="clear-cart">
+              Clear Cart
+            </button>
+            <button className="add-order" onClick={handleOrder}>
+              Place Order
+            </button>
+          </div>
         </>
       )}
     </div>

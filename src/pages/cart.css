@@ -68,7 +68,7 @@
 }
 
 .clear-cart:hover {
-  background-color: #2980b9;
+  background-color: #3e8ec4;
 }
 
 .quantity-control {
@@ -79,4 +79,21 @@
 }
 .prod-detail {
   width: 300px;
+}
+.car-order-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-order {
+  background-color: #55db34;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.add-order:hover {
+  background-color: #43d41f;
 }

@@ -18,7 +18,7 @@ const PDP = () => {
   const [loading, setLoading] = useState(false);
   const query = useQuery();
   const id = query.get("id");
-  console.log(cart.items);
+
   const [addtocart, setAddtocart] = useState(false);
 
   useEffect(() => {
@@ -78,12 +78,6 @@ const PDP = () => {
                 <Link to="/cart">Go to cart</Link>
               </button>
             )}
-            {/* <button
-              onClick={handleAddToCart}
-              className={addtocart ? "adtc atcbtn" : "atc atcbtn"}
-            >
-              {addtocart ? <Link to="/cart">Go to cart</Link> : "Add to cart"}
-            </button> */}
           </div>
         </div>
       )}
