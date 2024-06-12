@@ -38,10 +38,12 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <h2>Your Shopping Cart</h2>
-      <Link className="myorders" to="/orders">
-        My Orders
-      </Link>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h2>Your Shopping Cart</h2>
+        <Link className="myorders" to="/orders">
+          My Orders
+        </Link>
+      </div>
       {cart?.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
