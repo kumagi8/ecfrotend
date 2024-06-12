@@ -1,0 +1,46 @@
+.orders {
+  padding: 20px;
+  min-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.orders h2 {
+  margin-bottom: 20px;
+}
+
+.orders p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+.orders ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.order-item div {
+  margin-bottom: 5px;
+}
+
+.order-item strong {
+  display: inline-block;
+  width: 100px;
+}
+
+.order-item ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.order-item li {
+  margin-bottom: 5px;
+}

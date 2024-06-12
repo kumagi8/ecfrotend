@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import PDP from "./pages/PDP";
+import Orders from "./pages/Orders";
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,8 @@ function App() {
 
             <Route path="/cart" element={<Cart />} />
             <Route path="/product" element={<PDP />} />
+            <Route path="/orders" element={<Orders />} />
+
             <Route path="/category/:category" element={<ProductCategory />} />
           </Route>
           <Route path="/login" element={<Login />} />

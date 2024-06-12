@@ -4,6 +4,7 @@ import { removeItem, clearCart } from ".././Redux/cartSlice";
 import * as Icons from "react-bootstrap-icons";
 import { addItem } from ".././Redux/cartSlice";
 import "./cart.css";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const cart = useSelector((store) => store.cart.items);
 
@@ -38,6 +39,9 @@ const Cart = () => {
   return (
     <div className="cart">
       <h2>Your Shopping Cart</h2>
+      <Link className="myorders" to="/orders">
+        My Orders
+      </Link>
       {cart?.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (

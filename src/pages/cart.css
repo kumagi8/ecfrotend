@@ -6,7 +6,13 @@
 }
 
 .cart h2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+.myorders {
+  text-decoration: none;
+  border: #2980b9 1px solid;
+  border-radius: 20px;
+  padding: 0.3rem 0.5rem;
 }
 
 .cart p {
@@ -17,6 +23,7 @@
 .cart ul {
   list-style-type: none;
   padding: 0;
+  margin-top: 10px;
 }
 
 .cart-item {
