@@ -44,7 +44,7 @@ const Cart = () => {
         <ul>
           {cart?.map((item) => (
             <li key={item.id} className="cart-item">
-              <div>
+              <div className="prod-detail">
                 <strong>{item.title}</strong>
                 <span>Quantity: {item.quantity}</span>
                 <span>Total Price: ${item.totalPrice.toFixed(2)}</span>
