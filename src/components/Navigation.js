@@ -43,6 +43,8 @@ const Navigation = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            width: "80%",
+            margin: "0rem 1rem",
           }}
         >
           <div id="search-bar">
@@ -50,7 +52,7 @@ const Navigation = () => {
 
             <Icons.Search type="submit" />
           </div>
-          <div>
+          <div style={{ width: "100%" }}>
             {searchQuery !== "" && (
               <ul className="search-result">
                 {searchResult.slice(0, 7).map((sr) => (

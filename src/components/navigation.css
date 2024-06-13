@@ -17,7 +17,7 @@ nav {
   }
 }
 #search-bar {
-  min-width: 30rem;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -69,8 +69,11 @@ nav {
 .home {
   display: none;
 }
-/* 
-@media (max-width: 600px) {
+
+/* @media (max-width: 600px) {
+  #search-bar {
+    width: 18rem;
+  }
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -91,15 +94,15 @@ nav {
   justify-content: center;
   list-style: none;
   position: absolute;
-  min-width: 30rem;
+  font-size: small;
+  width: 80%;
   background-color: rgb(211, 211, 211);
-
   z-index: 1;
   padding: 0.5rem;
   > li {
     display: "flex";
     justify-content: center;
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
     border-bottom: 1px rgb(229, 229, 229) solid;
     padding: 0.5rem 0;
   }
@@ -118,5 +121,12 @@ nav {
   }
   .home {
     display: block;
+    margin: 0.5rem;
+  }
+  .search-result {
+    width: 80%;
+  }
+  #search-bar {
+    /* width: 18rem; */
   }
 }
