@@ -13,8 +13,8 @@ const Pagination = ({ pageNo, setPageNo, noOfPages }) => {
       return totalPages;
     }
 
-    const startPage = Math.max(1, Math.min(activepage - 2, noOfPages - 4));
-    const endPage = Math.min(noOfPages, startPage + 4);
+    const startPage = Math.max(1, Math.min(activepage - 4, noOfPages - 6));
+    const endPage = Math.min(noOfPages, startPage + 6);
 
     return totalPages.slice(startPage - 1, endPage);
   };
@@ -39,9 +39,11 @@ const Pagination = ({ pageNo, setPageNo, noOfPages }) => {
   ) : (
     <div className="pagination">
       <ul>
-        <li onClick={() => handlePageButton("previous")}>
-          <Icons.ArrowLeftCircle className="actionbutton" size={26} />
-        </li>
+        {activepage !== 1 && (
+          <li onClick={() => handlePageButton("previous")}>
+            <Icons.ArrowLeftCircle className="actionbutton" size={26} />
+          </li>
+        )}
         {pagesToDisplay.map((m, i) => (
           <li
             onClick={() => handlePage(m)}
@@ -52,9 +54,11 @@ const Pagination = ({ pageNo, setPageNo, noOfPages }) => {
             {m}
           </li>
         ))}
-        <li onClick={() => handlePageButton("next")}>
-          <Icons.ArrowRightCircle className="actionbutton" size={26} />
-        </li>
+        {activepage !== noOfPages && (
+          <li onClick={() => handlePageButton("next")}>
+            <Icons.ArrowRightCircle className="actionbutton" size={26} />
+          </li>
+        )}
       </ul>
     </div>
   );

@@ -9,10 +9,23 @@ const Navigation = () => {
   const cart = useSelector((store) => store.cart.items);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
+  async function handleSearch(e) {
+    try {
+      setSearchQuery(e.target.value);
+      let searchresponse = await fetch(
+        `https://api.escuelajs.co/api/v1/products/?title=${e.target.value}`
+      ).then((res) => res.json());
+      setSearchResult(searchresponse.slice(0, 6));
+    } catch (err) {
+      console.log(err);
+    }
+  }
   function handleToggle() {
     setToggleMenu(!toggleMenu);
   }
   const fontsizee = 26;
+  console.log(searchResult);
   return (
     <div className="navigationstyle">
       <nav>
@@ -25,14 +38,30 @@ const Navigation = () => {
         <Link className="home" to="/">
           <Icons.House color="black" size={24} />
         </Link>
-        <div id="search-bar">
-          <input
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <Icons.Search />
-        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <div id="search-bar">
+            <input value={searchQuery} onChange={handleSearch} />
 
+            <Icons.Search type="submit" />
+          </div>
+          <div>
+            {searchQuery !== "" && (
+              <ul className="search-result">
+                {searchResult.slice(0, 7).map((sr) => (
+                  <li key={sr.id} style={{ margin: "none" }}>
+                    {sr.title}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
         <ul
           id="nav-links"
           className={`nav-links ${!toggleMenu ? "hidden" : ""}`}
