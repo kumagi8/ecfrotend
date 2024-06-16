@@ -13,8 +13,8 @@ const Pagination = ({ pageNo, setPageNo, noOfPages }) => {
       return totalPages;
     }
 
-    const startPage = Math.max(1, Math.min(activepage - 4, noOfPages - 6));
-    const endPage = Math.min(noOfPages, startPage + 6);
+    const startPage = Math.max(1, Math.min(activepage - 2, noOfPages - 4));
+    const endPage = Math.min(noOfPages, startPage + 4);
 
     return totalPages.slice(startPage - 1, endPage);
   };

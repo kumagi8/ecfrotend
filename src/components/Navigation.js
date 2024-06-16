@@ -16,6 +16,7 @@ const Navigation = () => {
       let searchresponse = await fetch(
         `https://api.escuelajs.co/api/v1/products/?title=${e.target.value}`
       ).then((res) => res.json());
+
       setSearchResult(searchresponse.slice(0, 6));
     } catch (err) {
       console.log(err);
@@ -25,7 +26,6 @@ const Navigation = () => {
     setToggleMenu(!toggleMenu);
   }
   const fontsizee = 26;
-  console.log(searchResult);
   return (
     <div className="navigationstyle">
       <nav>
@@ -55,11 +55,17 @@ const Navigation = () => {
           <div style={{ width: "100%" }}>
             {searchQuery !== "" && (
               <ul className="search-result">
-                {searchResult.slice(0, 7).map((sr) => (
-                  <li key={sr.id} style={{ margin: "none" }}>
-                    {sr.title}
-                  </li>
-                ))}
+                {searchResult.length === 0 ? (
+                  <li>no result found with "{searchQuery}"</li>
+                ) : (
+                  <>
+                    {searchResult?.slice(0, 7).map((sr) => (
+                      <li key={sr.id} style={{ margin: "none" }}>
+                        {sr.title}
+                      </li>
+                    ))}
+                  </>
+                )}
               </ul>
             )}
           </div>

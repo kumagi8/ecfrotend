@@ -123,10 +123,4 @@ nav {
     display: block;
     margin: 0.5rem;
   }
-  .search-result {
-    width: 80%;
-  }
-  #search-bar {
-    /* width: 18rem; */
-  }
 }
