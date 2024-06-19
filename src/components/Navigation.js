@@ -38,21 +38,13 @@ const Navigation = () => {
         <Link className="home" to="/">
           <Icons.House color="black" size={24} />
         </Link>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            width: "80%",
-            margin: "0rem 1rem",
-          }}
-        >
+        <div classsName="search-container">
           <div id="search-bar">
             <input value={searchQuery} onChange={handleSearch} />
 
             <Icons.Search type="submit" />
           </div>
-          <div style={{ width: "100%" }}>
+          <div className="search-result-container">
             {searchQuery !== "" && (
               <ul className="search-result">
                 {searchResult.length === 0 ? (
@@ -72,7 +64,7 @@ const Navigation = () => {
         </div>
         <ul
           id="nav-links"
-          className={`nav-links ${!toggleMenu ? "hidden" : ""}`}
+          // className={`nav-links ${!toggleMenu ? "hidden" : ""}`}
         >
           {/* <li>
             <Link to="/login">
@@ -82,7 +74,7 @@ const Navigation = () => {
           </li> */}
           <li id="cart">
             <Link to="/cart">
-              <Icons.Cart size={20} />
+              <Icons.Cart size={20} color="black" />
               <p>{cart.length}</p>
             </Link>
           </li>
