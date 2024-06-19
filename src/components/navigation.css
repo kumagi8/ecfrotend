@@ -84,17 +84,16 @@ nav {
   flex-direction: column;
   justify-content: center;
   list-style: none;
-  background-color: rgb(211, 211, 211);
+  background-color: rgb(219, 244, 255);
   min-width: 400px;
   z-index: 1;
   padding: 0.5rem;
   > li {
     display: "flex";
     justify-content: center;
-    /* margin-bottom: 0.5rem; */
     border-bottom: 1px rgb(229, 229, 229) solid;
     padding: 0.5rem 0;
-    text-wrap: balance;
+    text-wrap: wrap;
   }
   > li:last-child {
     border-bottom: none;
@@ -125,7 +124,11 @@ nav {
   }
   .search-result {
     min-width: 300px;
+    > li {
+      text-wrap: wrap;
+    }
   }
+
   .logospace {
     display: none;
   }
@@ -140,5 +143,8 @@ nav {
   }
   .search-result {
     min-width: 250px;
+    > li {
+      text-wrap: wrap;
+    }
   }
 }
