@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Loader from "../components/Loader";
-import * as Icons from "react-bootstrap-icons";
 import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItem } from "../Redux/cartSlice";
@@ -36,7 +35,6 @@ const PDP = () => {
         }
         console.log(item);
       }
-      //   console.log(dispatch(itemExists(productdetail.id)));
       setLoading(false);
     }
     getProduct();
@@ -53,7 +51,6 @@ const PDP = () => {
       })
     );
   }
-  console.log(product);
   const { title, description, price, images } = product;
   return (
     <div className="pdp">
