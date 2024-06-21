@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as Icons from "react-bootstrap-icons";
 import "./carrosel.css";
 const Carrosel = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(0);
-  console.log(images?.length);
   const ImageCount = images?.length;
+  //   useEffect(() => {
+  //     setInterval(() => {
+  //       setSelectedImage(selectedImage % images.length);
+  //     }, 5000);
+  //   }, [setSelectedImage]);
   return (
     <div className="carrosel-container">
       {/* {images?.map((imag, index) => (

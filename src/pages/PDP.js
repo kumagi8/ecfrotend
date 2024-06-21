@@ -53,8 +53,8 @@ const PDP = () => {
       })
     );
   }
-
-  const { name, description, price, images } = product;
+  console.log(product);
+  const { title, description, price, images } = product;
   return (
     <div className="pdp">
       {loading ? (
@@ -65,7 +65,7 @@ const PDP = () => {
             <Carrosel images={images} />
           </div>
           <div className="product-info">
-            <h1>{name}</h1>
+            <h1 className="product-title">{title}</h1>
             <p>{description}</p>
             <h2>${price?.toFixed(2)}</h2>
             {!addtocart ? (
