@@ -17,7 +17,7 @@ const Carrosel = ({ images }) => {
     return () => {
       clearInterval(interval); // Cleanup function to clear the interval
     };
-  }, [ImageCount]);
+  }, []);
   return (
     <div className="carrosel-container">
       {images && images.length > 0 && (
