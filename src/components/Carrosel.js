@@ -17,12 +17,12 @@ const Carrosel = ({ images }) => {
     return () => {
       clearInterval(interval); // Cleanup function to clear the interval
     };
-  }, []);
+  }, [ImageCount]);
   return (
     <div className="carrosel-container">
       {images && images.length > 0 && (
         <div>
-          <img key={selectedImage} src={images[selectedImage]} />
+          <img key={selectedImage + "io"} src={images[selectedImage]} />
           <div className="navigator">
             {images.map((imag, i) =>
               selectedImage === i ? (
