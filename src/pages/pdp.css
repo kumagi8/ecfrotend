@@ -1,5 +1,6 @@
 .product-detail {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   padding: 20px;
   border: 1px solid #ddd;
@@ -8,6 +9,7 @@
 }
 
 .product-images {
+  display: flex;
   flex: 1;
   min-width: 200px;
   text-align: center;
@@ -60,4 +62,11 @@
 .atcbtn {
   padding: 0.5rem 1rem;
   width: 8rem;
+}
+
+@media (max-width: 600px) {
+  .product-detail {
+    display: flex;
+    flex-direction: column;
+  }
 }

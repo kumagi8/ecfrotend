@@ -25,7 +25,7 @@ const Navigation = () => {
   function handleToggle() {
     setToggleMenu(!toggleMenu);
   }
-  const fontsizee = 26;
+  const fontsizee = 20;
   return (
     <div className="navigationstyle">
       <nav>

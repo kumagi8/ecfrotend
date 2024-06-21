@@ -7,6 +7,7 @@ import { addItem } from "../Redux/cartSlice";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./pdp.css";
+import Carrosel from "../components/Carrosel";
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -61,9 +62,7 @@ const PDP = () => {
       ) : (
         <div className="product-detail">
           <div className="product-images">
-            {images?.map((imag, index) => (
-              <img key={index} src={imag} alt={`${name} imag ${index + 1}`} />
-            ))}
+            <Carrosel images={images} />
           </div>
           <div className="product-info">
             <h1>{name}</h1>
